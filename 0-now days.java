@@ -10,8 +10,8 @@ public class Homework {
 		int month = sc.nextInt();
 		System.out.print("please input date:");
 		int date = sc.nextInt();
-		if((month < 12 && month > 0)||date < 31 && date > 0) {
-			if((a % 4 == 0 && a % 100 !=0) || (a % 400 == 0)){
+	      /*if((month < 12 && month > 0)||date < 31 && date > 0) {
+		//①//	if((a % 4 == 0 && a % 100 !=0) || (a % 400 == 0)){
 				if(month == 1) {
 					days = date;
 				}else if(month == 2 ) {
@@ -68,7 +68,41 @@ public class Homework {
 			}
 		}else {
 			System.out.print("it is a error day");
+		}*/
+		int b;
+		int days =date;//days记录总天数，以当前月做初值
+		if((a % 4 ==0 && a % 100 != 0)||a % 400 ==0) {
+			b = 29;
+			System.out.println("this is 闰年");
+		}else {
+			b = 28;
+			System.out.println("this is 平年");
 		}
+		switch(month - 1) {
+			case 11:
+				days += 30;
+			case 10:
+				days += 31;
+			case 9:
+				days += 30;
+			case 8:
+				days += 31;
+			case 7:
+				days += 31;
+			case 6:
+				days += 30;
+			case 5:
+				days += 31;
+			case 4:
+				days += 30;
+			case 3:
+				days += 31;
+			case 2:
+				days += b;
+			case 1:
+				days += 31;
+		}
+		System.out.println("days is " + days);
 	}
 }
 	
