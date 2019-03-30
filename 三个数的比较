@@ -1,0 +1,80 @@
+//2、计算三个数的最小值和中间值
+import java.util.Scanner;
+
+public class Test04 {
+	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("please input a num:");
+//		int a = sc.nextInt();
+//		
+//		System.out.println(a % 10);
+//		System.out.println(a / 10);
+//		int gw = a % 10;
+//		int sw = a / 10;		
+//		int a2 =gw * 10 + sw;
+//		System.out.println(a2);
+//		
+//		int a1 = 100;
+//		int a2 = 200;
+//		if(a1 > a2) {
+//			System.out.println("a1 big");
+//		}else if(a1 < a2 ) { //条件分支级联
+//			System.out.println("a2 big");
+//		}else {
+//			System.out.println("a1 equals a2");
+//		}
+//		
+//		
+//		if (a1 > a2 ) {
+//			System.out.println("a1 big");
+//		}else {
+//			if (a1 < a2) {
+//				System.out.println("a2 big");
+//			}else {
+//				System.out.println("equal");
+//			}
+//		}
+		int a1 = 3;
+		int a2 = 2;
+		int a3 = 1;
+		int max;
+		int min ;
+		int medium ;
+		if(a1 > a2) {
+			max = a1;
+			if(a1 > a3) {
+				if(a2 > a3) {
+					medium = a2;
+					min = a3;
+				}else {
+					medium = a3;
+					min = a2;
+				}	
+			}else {
+				max = a3;
+				medium = a1;
+				min = a2;
+			}
+		}else {
+			max = a2;
+			min = a1;
+			if(a2 > a3) {
+				if(a1 > a3) {
+					medium = a1;
+					min = a3;
+				}else {
+					medium = a3;
+					min = a1;
+				}
+			}else {
+				max = a3;
+				medium = a2;
+				min = a1;
+			}
+			
+		}
+		System.out.println("max is " + max);
+		System.out.println("medium is " + medium);
+		System.out.println("min is " + min);
+	}
+}
