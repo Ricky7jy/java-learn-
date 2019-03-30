@@ -1,0 +1,68 @@
+//3、计算1970年后的任意天到1970的天数、星期、第几周、第几年
+import java.util.Scanner;
+
+public class Test06 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("please input year is ");
+		int year = sc.nextInt();
+		System.out.print("please input month is ");
+		int month = sc.nextInt();
+		System.out.print("please input date is ");
+		int date = sc.nextInt();
+		int years;
+		int day = 0;
+		int days = 0;
+		years = year - 1970 + 1;
+		System.out.println("this is " + years + " years");
+		int runnum = 0;
+		for(int n = 1970; n < year; n++) {
+			if((n % 4 == 0 && n % 100 != 0)||(n % 400 == 0)) {
+				runnum++;	
+			}
+		}
+		
+		//int d = date;
+		//计算到年初到本月的天数
+		for(int i=1; i < month;i++) {
+			switch(i) {
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					day = 31;
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					day = 30;
+					break;
+				case 2:
+					if((year % 4 == 0 && year % 100 != 0)||(year % 400 == 0)) {
+						day = 29;
+					}else {
+						day = 28;
+					}
+					break;
+				default:
+					System.out.println("输入错误");
+					break;
+			}
+			days = days + day; 
+		}
+		int Tdays = (years - 1) * 365 + days + date + runnum;
+		System.out.println("this is " + Tdays + " days");
+		
+		int weeks = ( Tdays + 6 ) / 7;
+		System.out.println("this is " + weeks + " weeks");
+		// 一  二 三 四 五 六 日
+		//0 1 2 3 4 5 6
+		int firstday1970 = 3;
+		int weekss = Tdays % 7 + firstday1970 - 1;
+		System.out.println("this is " + weekss );
+	}
+}
