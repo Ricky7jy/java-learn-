@@ -1,0 +1,17 @@
+//1、输入一个四位数 产生反序的整数
+import java.util.Scanner;
+
+public class homework {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("please input a number:");
+		int num = sc.nextInt();
+		int gw = num % 10; 
+		int sw = ( num / 10 ) % 10;
+		int bw = ( num / 100 ) % 10;
+		int qw = num / 1000;
+		
+		int ni = gw * 1000 + sw * 100 + bw * 10 + qw;
+		System.out.println(ni);
+	}
+}
