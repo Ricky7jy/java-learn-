@@ -11,7 +11,7 @@ public class Calendar {
 		int days = 0;
 		int Tday;
 		boolean febday;
-		//¼ÆËãµ½Ä¿Ç°Äê·İµÄÌìÊı
+		//è®¡ç®—åˆ°ç›®å‰å¹´ä»½çš„å¤©æ•°
 		for(int i = 1970; i < year; i++) {
 			if((i % 4 == 0 && i % 100 != 0)||(i % 400 == 0)) {
 				totalday = totalday + 366;
@@ -22,13 +22,13 @@ public class Calendar {
 		
 		
 		System.out.println("\n********** " + year +" year " + month +" month calendar **********");
-		//ÅĞ¶ÏÊÇ·ñÊÇÈòÄê
+		//åˆ¤æ–­æ˜¯å¦æ˜¯é—°å¹´
 		if((year % 4 == 0 && year % 100 != 0)||(year % 400 == 0)) {
 			 febday = true;
 			
 		}	
 		
-			//¼ÆËã±¾ÔÂµ½±¾Äê³õµÄÌìÊı
+			//è®¡ç®—æœ¬æœˆåˆ°æœ¬å¹´åˆçš„å¤©æ•°
 			int beforeday = 0;
 			for(int j = 1;j <= month; j++ ) {
 				switch(j) {
@@ -55,7 +55,7 @@ public class Calendar {
 					}
 					break;
 				default:
-					System.out.println("ÊäÈë´íÎó");
+					System.out.println("è¾“å…¥é”™è¯¯");
 					break;
 				}
 //				if(j < month ) {
@@ -64,15 +64,15 @@ public class Calendar {
 				
 			}
 			
-			//µ½Ä¿Ç°ÔÂ·İµÚÒ»ÌìµÄ×ÜÌìÊı
+			//åˆ°ç›®å‰æœˆä»½ç¬¬ä¸€å¤©çš„æ€»å¤©æ•°
 			Tday = beforeday + totalday - days + 1;
-			System.out.println(Tday);
-			int first1970week = 3;//1970ÄêµÚÒ»ÌìÎªÖÜËÄ
+			//System.out.println(Tday);
+			int first1970week = 3;//1970å¹´ç¬¬ä¸€å¤©ä¸ºå‘¨å››
 			// 0	1	 2	  3	   4	5	  6
-			//ÖÜÒ» ÖÜ¶ş ÖÜÈı ÖÜËÄ ÖÜÎå ÖÜÁù ÖÜÈÕ
-			//ÇóÊÇÖÜ¼¸
-			int week = Tday % 7 + first1970week - 1;
-			System.out.println(week);
+			//å‘¨ä¸€ å‘¨äºŒ å‘¨ä¸‰ å‘¨å›› å‘¨äº” å‘¨å…­ å‘¨æ—¥
+			//æ±‚æ˜¯å‘¨å‡ 
+			int week = (Tday % 7 + first1970week - 1) % 7;
+			//System.out.println(week);
 			System.out.println("Mon\tTue\tWed\tThu\tFri\tSat\tSun");
 			for(int k=1; k <= week; k++) {
 				System.out.print("\t");
