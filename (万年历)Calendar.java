@@ -79,7 +79,7 @@ public class Calendar {
 			}
 			for(int m = 1; m <= days; m++) {
 				System.out.print(m + "\t");
-				if(m % 7 == (7 - week)) {
+				if(m % 7 == (7 - week) % 7) {
 					System.out.print("\n");
 				}
 			}
