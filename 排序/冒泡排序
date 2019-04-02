@@ -2,9 +2,17 @@
 public class Homework5 {
 	public static void main(String[] args) {
 		int[] a = {9,8,7,6,5,4,3,2,1};
+		//低效稳定
+		//冒泡排序 两两比较 如果前面的大于后面的就交换
+		//每一次从头比较到倒数第二个就会有一个大数排到最后
+		//重得上面的冒泡过程  长度减1 就可以让长度减一个元素排到最后
+		//数组有序
+		//外循环决定冒多少次泡
 		for(int i = 0; i < a.length - 1; i++) {
+		//内循环是一次冒泡的全过程 内循环条件减1必须有 否则越界
 			for(int j =0; j < a.length -1 - i; j++) {
 				if(a[j] > a[j+1]) {
+				//冒泡排序的核心算法两两比较交换
 					int temp = a[j+1];
 					a[j+1] = a[j];
 					a[j] = temp;
