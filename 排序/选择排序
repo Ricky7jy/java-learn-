@@ -10,6 +10,7 @@ public class Homework6 {
 					temp = j;
 				}	
 			}
+			//把当前无序区最小值跟当前无序区第一个位置交换，是最小值进入有序区
 			int tmp = a[temp];
 			a[temp] = a[i];
 			a[i] = tmp;
