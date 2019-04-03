@@ -10,7 +10,7 @@ public class Homework5 {
 		//外循环决定冒多少次泡
 		for(int i = 0; i < a.length - 1; i++) {
 		//内循环是一次冒泡的全过程 内循环条件减1必须有 否则越界
-			for(int j =0; j < a.length -1 - i; j++) {
+			for(int j =0; j < a.length -1; j++) {
 				if(a[j] > a[j+1]) {
 				//冒泡排序的核心算法两两比较交换
 					int temp = a[j+1];
